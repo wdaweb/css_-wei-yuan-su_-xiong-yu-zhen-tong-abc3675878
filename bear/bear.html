@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+      margin:0;
+      padding: 0;
+      list-style: none;
+      font-family: 'Microsoft JhengHei', sans-serif;
+    }
+  
+  body {
+    width: 100vw;
+    height: 100vh;
+    background: url(./sakura.jpg) no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bear {
+    width: 300px;
+    height: 300px;
+    background-color: black;
+    border-radius: 50%;
+    position: relative;
+    filter: drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.781));
+  }
+
+  .ear::before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    position: absolute;
+    border-radius: 50%;
+    left: 25px;
+  }
+
+  .ear::after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    position: absolute;
+    border-radius: 50%;
+    right: 25px;
+  }
+
+  .ear2::before {
+    content:'';
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    left: 34px;
+    top: 9px;
+  }
+
+  .ear2::after {
+    content:'';
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    right: 34px;
+    top: 9px;
+    z-index: 1;
+  }
+
+  .eyes::before {
+    content:'';
+    width: 63px;
+    height: 63px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    left: 55px;
+    top: 55px;
+  }
+
+  .eyes::after {
+    content:'';
+    width: 63px;
+    height: 63px;
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    right: 55px;
+    top: 55px;
+  }
+
+  .eyes2::before {
+    content:'';
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    background-color: black;
+    border-radius: 50%;
+    left: 64px;
+    top: 64px;
+    animation: blink 3s infinite alternate ease-in-out;
+  }
+
+  .eyes2::after {
+    content:'';
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    background-color: black;
+    border-radius: 50%;
+    right: 64px;
+    top: 64px;
+    z-index: 1;
+    animation: blink 3s infinite alternate ease-in-out;
+  }
+
+
+  .red::before { 
+    content: '';
+    width: 80px;
+    height: 80px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.651);
+    background-image: radial-gradient(rgb(255, 118, 141) 2%,red);
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    transform: translate(-20%,-50%);
+  }
+
+  .red::after { 
+    content: '';
+    width: 80px;
+    height: 80px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.651);
+    background-image: radial-gradient(rgb(255, 118, 141) 2%,red);
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    right: 0;
+    transform: translate(20%,-50%);
+  }
+
+  .nose {
+    width: 125px;
+    height: 80px;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-45%);
+    position: absolute;
+    border-radius: 50% / 50%;
+  }
+
+  .nose::before {
+    content: '';
+    width: 32px;
+    height: 20px;
+    background-color: black;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    border-radius: 50% / 50%;
+  }
+
+  .nose::after {
+    content: '';
+    width: 78px;
+    height: 26px;
+    background-color: black;
+    bottom: 13px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    border-radius: 50% / 50%;
+  }
+
+  .chest::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    bottom: 30px;
+    left: 50%;
+    position: absolute;
+    transform-origin: bottom;
+    transform: skewX(50deg) translateX(-50%);
+  }
+
+  .chest::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    bottom: 30px;
+    left: 50%;
+    position: absolute;
+    transform-origin: bottom;
+    transform: skewX(-50deg) translateX(-50%);
+  }
+
+  @keyframes blink {
+    90% {background-image: linear-gradient(0deg, black 100%,white 100%);}
+    92% {background-image: linear-gradient(0deg, black 80%,white 80%);}
+    94% {background-image: linear-gradient(0deg, black 60%,white 60%);}
+    96% {background-image: linear-gradient(0deg, black 40%,white 40%);}
+    98% {background-image: linear-gradient(0deg, black 20%,white 20%);}
+    100% {background-image: linear-gradient(0deg, black 0%,white 0%);}
+  }
+</style>
+<body>
+  <div class="bear">
+    <div class="ear">
+      <div class="ear2"></div>
+    </div>
+    <div class="eyes">
+      <div class="eyes2">
+      </div>
+    </div>
+    <div class="red"></div>
+    <div class="nose"></div>
+    <div class="chest"></div>
+  </div>
+</body>
+</html>
